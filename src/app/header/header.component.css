@@ -1,0 +1,21 @@
+/* .w3-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.fa-bars {
+  cursor: pointer;
+}
+
+.w3-bar .w3-right {
+  cursor: pointer !important
+}
+
+.w3-bar .w3-bar-item {
+  text-decoration: none;
+}
+
+.w3-black {
+  background-color: #1668af !important
+}

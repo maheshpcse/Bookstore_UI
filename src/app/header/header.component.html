@@ -1,0 +1,57 @@
+<!-- Top container -->
+<!-- <div class="w3-bar w3-top w3-black w3-xlarge" style="z-index:4">
+    <span class="w3-bar-item w3-left">MEAN <span style="color: orange;">AKV</span></span>
+    <span class="w3-bar-item w3-justify"></span>
+    <span class="w3-bar-item w3-justify"></span>
+    <a class="w3-bar-item w3-justify" title="close side menu" id="myOverlay" (click)="showOpen()">
+        <i class="fa fa-bars" aria-hidden="false"></i>
+    </a>
+    <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i
+            class="fa fa-bars"></i>  Menu</button>
+
+    <span class="w3-bar-item w3-right">
+        <div class="w3-col s3" style="cursor: pointer;">
+            <img src="assets/w3images/avatar2.png" class="w3-circle" style="width:46px">
+        </div>
+    </span>
+    <span class="w3-bar-item w3-right">
+        <i class="fa fa-gear" aria-hidden="false"></i>
+    </span>
+    <span class="w3-bar-item w3-right">
+        <i class="fa fa-bell" aria-hidden="false"></i>
+    </span>
+</div> -->
+
+<div class="w3-bar w3-theme-d2 w3-black w3-left-align w3-xlarge" style="z-index:4">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
+        href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a [routerLink]="['/']" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i
+            class="fa fa-home w3-margin-right"></i>BOOKS <span style="color: orange;">STORE</span></a>
+    <a class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" 
+        title="close side menu" id="myOverlay" (click)="showOpen()">
+        <i class="fa fa-bars" aria-hidden="false"></i>
+    </a>
+    <a [routerLink]="['/']" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i
+            class="fa fa-globe"></i></a>
+    <a [routerLink]="['/']" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i
+            class="fa fa-user"></i></a>
+    <a [routerLink]="['/']" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i
+            class="fa fa-envelope"></i></a>
+    <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span
+                class="w3-badge w3-right w3-small w3-green">3</span></button>
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px;top:45px;left: 620px;">
+            <a [routerLink]="['/']" class="w3-bar-item w3-button">One new friend request</a>
+            <a [routerLink]="['/']" class="w3-bar-item w3-button">John Doe posted on your wall</a>
+            <a [routerLink]="['/']" class="w3-bar-item w3-button">Jane likes your post</a>
+        </div>
+    </div>
+    <a class="w3-bar-item w3-button w3-dropdown-hover w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+        <img src="assets/w3images/avatar2.png" class="w3-circle" style="height:30px;width:30px" alt="Avatar">
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-left" style="width:150px;top:45px;right: -110px;">
+            <a [routerLink]="['/admin/profile']" class="w3-bar-item w3-button">Profile</a>
+            <a [routerLink]="['/']" class="w3-bar-item w3-button">Settings</a>
+            <a [routerLink]="['/']" class="w3-bar-item w3-button">Logout</a>
+        </div>
+    </a>
+</div>
