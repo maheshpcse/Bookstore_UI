@@ -16,6 +16,7 @@ import { ViewProfileComponent } from './admin/view-profile/view-profile.componen
 import { LoginComponent } from './access/login/login.component';
 import { SignupComponent } from './access/signup/signup.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,5 +1,8 @@
+import { AuthService } from './../../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrManager } from 'ng6-toastr-notifications';
+
 
 @Component({
   selector: 'app-signup',
@@ -9,9 +12,17 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
 
   slideIndex: any = 1;
+  firstname: any;
+  lastname: any;
+  username: any;
+  email: any;
+  password: any;
+  phonenumber: any;
+  desgination: any;
+  department: any;
 
   constructor(
-    private router: Router
+    private router: Router, private authservice: AuthService, private toster: ToastrManager
   ) { }
 
   ngOnInit() {
@@ -54,6 +65,30 @@ export class SignupComponent implements OnInit {
 
   goToLogin() {
     this.router.navigate(['/login']);
+  }
+
+  signupdetails() {
+    let obj = {
+      firstname: this.firstname,
+      lastname: this.lastname,
+      username: this.username,
+      email: this.email,
+      password: this.password,
+      phonenumber: this.phonenumber,
+      desgination: this.desgination,
+      depertmenet: this.department,
+      status: 'open'
+    }
+    this.authservice.signupdetails(obj).subscribe(response => {
+      console.log('the response is tee', response);
+      if (response['success'] == true) {
+        this.toster.successToastr('signup sucess');
+        this.router.navigate(['./login'])
+      }
+      else {
+        this.toster.errorToastr('sign up is failed');
+      }
+    })
   }
 
 }
