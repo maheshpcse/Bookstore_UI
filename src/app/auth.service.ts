@@ -12,4 +12,8 @@ export class AuthService {
   signupdetails(obj) {
     return this.http.post(Apiservice.API.SIGNUP, obj);
   }
+  logindetails(obj) {
+    return this.http.post(Apiservice.API.LOGIN, obj);
+
+  }
 }
