@@ -24,6 +24,9 @@ import { InboxComponent } from './admin/inbox/inbox.component';
 import { BookViewComponent } from './book-view/book-view.component';
 import { OrderBookComponent } from './order-book/order-book.component';
 import { BookOrderFormComponent } from './book-order-form/book-order-form.component';
+import { AuthGuardService } from './auth-guard.service';
+import { AuthService } from './auth.service';
+import { AuthInterceptorService } from './auth-interceptor.service';
 
 
 @NgModule({
@@ -57,7 +60,11 @@ import { BookOrderFormComponent } from './book-order-form/book-order-form.compon
     ToastrModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthInterceptorService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
