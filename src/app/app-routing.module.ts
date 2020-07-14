@@ -14,12 +14,14 @@ import { BookHistoryComponent } from './book-history/book-history.component';
 import { InboxComponent } from './admin/inbox/inbox.component';
 import { BookViewComponent } from './book-view/book-view.component';
 import { BookOrderFormComponent } from './book-order-form/book-order-form.component';
+import { AuthGuardService } from './auth-guard.service';
+
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -70,9 +72,14 @@ const routes: Routes = [
     path: 'admin/settings',
     component: SettingsComponent
   },
-  { 
+  {
     path: 'admin/inbox',
     component: InboxComponent
+  },
+  {
+    path: 'profile',
+    canActivate: [AuthGuardService],
+    component: LoginComponent
   },
   {
     path: '**',
