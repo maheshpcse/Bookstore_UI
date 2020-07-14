@@ -15,6 +15,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ViewProfileComponent } from './admin/view-profile/view-profile.component';
 import { LoginComponent } from './access/login/login.component';
 import { SignupComponent } from './access/signup/signup.component';
+import { SettingsComponent } from './admin/settings/settings.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { BookOrdersComponent } from './book-orders/book-orders.component';
+import { BooksComponent } from './books/books.component';
+import { BookHistoryComponent } from './book-history/book-history.component';
+import { InboxComponent } from './admin/inbox/inbox.component';
+import { BookViewComponent } from './book-view/book-view.component';
+import { OrderBookComponent } from './order-book/order-book.component';
+import { BookOrderFormComponent } from './book-order-form/book-order-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +36,16 @@ import { SignupComponent } from './access/signup/signup.component';
     NotFoundComponent,
     ViewProfileComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    SettingsComponent,
+    NotificationsComponent,
+    BookOrdersComponent,
+    BooksComponent,
+    BookHistoryComponent,
+    InboxComponent,
+    BookViewComponent,
+    OrderBookComponent,
+    BookOrderFormComponent
   ],
   imports: [
     BrowserModule,

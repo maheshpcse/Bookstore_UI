@@ -535,6 +535,10 @@ a {
   transition: margin-left .4s
 }
 
+.w3-main{
+  position: relative;
+}
+
 .w3-modal {
   z-index: 3;
   display: none;

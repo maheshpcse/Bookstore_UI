@@ -3,16 +3,62 @@
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main">
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                home works!
+                <input type="text" id="myInput" name="book" [(ngModel)]="book" (keyup)="myFunction()"
+                    placeholder="Search for books..." title="Type in a name">
+                <ul id="myUL" *ngFor="let item of names; let i=index">
+                    <li *ngIf="hideData"><a [routerLink]="['/books']">{{ item }}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <button class="btn btn-action" (click)="downloadPdf()">Download PDF</button>
+            </div>
+        </div>
+        <div class="row mt-5" id="htmlData">
+            <div class="col-md-12">
+                <h2>Comparison Table</h2>
+
+                <table>
+                    <tr>
+                        <th style="width:50%">Features</th>
+                        <th>Basic</th>
+                        <th>Pro</th>
+                    </tr>
+                    <tr>
+                        <td>Sample text</td>
+                        <td><i class="fa fa-remove"></i></td>
+                        <td><i class="fa fa-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Sample text</td>
+                        <td><i class="fa fa-check"></i></td>
+                        <td><i class="fa fa-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Sample text</td>
+                        <td><i class="fa fa-check"></i></td>
+                        <td><i class="fa fa-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Sample text</td>
+                        <td><i class="fa fa-remove"></i></td>
+                        <td><i class="fa fa-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Sample text</td>
+                        <td><i class="fa fa-check"></i></td>
+                        <td><i class="fa fa-check"></i></td>
+                    </tr>
+                </table>
+
             </div>
         </div>
     </div>
-
     <app-footer></app-footer>
-
 </div>
+
 <!-- End page content -->

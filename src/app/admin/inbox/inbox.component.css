@@ -1,0 +1,37 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "RobotoDraft", "Roboto", sans-serif
+}
+
+.w3-bar-block .w3-bar-item {
+  padding: 16px;
+  border-left: 5px solid transparent
+}
+
+.w3-bar-block .w3-bar-item:hover {
+  border-left: 5px solid #1668af;
+}
+
+a {
+  text-decoration: none;
+}
+
+.w3-dark-grey {
+  background-color: #dee2e6 !important;
+  color: black !important;
+  text-align: center !important;
+}
+
+.w3-dark-grey:hover {
+  background-color: #1668af !important;
+  color: white !important;
+}
+
+.w3-red {
+  background-color: #1668af !important;
+}

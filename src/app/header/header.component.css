@@ -19,3 +19,38 @@
 .w3-black {
   background-color: #1668af !important
 }
+
+.w3-left .w3-bar-item {
+  font-size: 1rem;
+}
+
+.notification .w3-bar-item {
+  font-size: 1rem;
+}
+
+.active {
+  color: #1668af;
+}
+
+.notify {
+  text-align: center;
+  font-size: 1.3rem !important;
+  color: white;
+  background-color: #1668af;
+}
+
+.notification .w3-bar-item {
+  border-left: 5px solid transparent;
+}
+
+.notification .w3-bar-item:hover {
+  border-left: 5px solid #1668af;
+}
+
+.account .w3-bar-item {
+  border-left: 5px solid transparent;
+}
+
+.account .w3-bar-item:hover {
+  border-left: 5px solid #1668af;
+}

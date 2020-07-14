@@ -28,27 +28,22 @@ export class SignupComponent implements OnInit {
   }
 
   showDivs(n) {
-    console.log(n);
     var i;
-    var x = document.getElementsByClassName("mySlides");
-    console.log(x);
+    var x: any = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("demo");
     if (n > x.length) {
-      console.log('if starts');
       this.slideIndex = 1;
     }
     if (n < 1) {
-      console.log('if one starts');
       this.slideIndex = x.length;
     }
-    console.log(x.length);
     for (i = 0; i < x.length; i++) {
-      // x[i].style.display = "none";
+      x[i].style.display = "none";
     }
     for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" w3-red", "");
     }
-    // x[this.slideIndex - 1].style.display = "block";
+    x[this.slideIndex - 1].style.display = "block";
     dots[this.slideIndex - 1].className += " w3-red";
   }
 

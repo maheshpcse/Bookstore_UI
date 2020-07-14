@@ -1,0 +1,52 @@
+<app-header></app-header>
+<app-sidemenu></app-sidemenu>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- MAIN (Center website) -->
+                <div class="main">
+
+                    <h3>BOOK LIST</h3>
+                    <hr>
+
+                    <div id="myBtnContainer">
+                        <button class="btn" [ngClass]="{'active': showData == 'all'}" (click)="filterSelection('all')"> Show all</button>
+                        <button class="btn ml-2" [ngClass]="{'active': showData == 'nature'}" (click)="filterSelection('nature')"> Nature</button>
+                        <button class="btn ml-2" [ngClass]="{'active': showData == 'cars'}" (click)="filterSelection('cars')"> Cars</button>
+                        <button class="btn ml-2" [ngClass]="{'active': showData == 'people'}" (click)="filterSelection('people')"> People</button>
+                    </div>
+
+                    <!-- Portfolio Gallery Grid -->
+                    <div class="row">
+                        <div class="column" *ngFor="let item of books; let i=index">
+                            <div class="content">
+                                <img src="assets/w3images/{{ item.path }}" alt="_{{ item.name }}" style="width:100%">
+                                <h4>{{ item.name }}</h4>
+                                <p>{{ item.description }}</p>
+                                <!-- <a [routerLink]="['/notifications']" class="w3-bar-item w3-button notify">View</a> -->
+                                <div class="btn-action">
+                                    <button class="btn btn-view" (click)="bookView()"> View</button>
+                                    <button class="btn btn-view" (click)="bookOrder()"> Order</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column" *ngIf="books.length == 0">
+                            <div class="content text-center mt-5">
+                                No Data Found.
+                            </div>
+                        </div>
+                        <!-- END GRID -->
+                    </div>
+
+                    <!-- END MAIN -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+
+<!-- End page content -->

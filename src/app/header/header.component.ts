@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 declare var $:any
 
 
@@ -9,9 +10,15 @@ declare var $:any
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  href: any;
+
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.href = this.router.url;
+    // console.log(this.href);
   }
 
   // Toggle between showing and hiding the sidebar, and add overlay effect
