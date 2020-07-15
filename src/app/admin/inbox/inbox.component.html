@@ -12,31 +12,28 @@
                     <a href="javascript:void(0)" class="w3-bar-item w3-dark-grey w3-button w3-left-align"
                         onclick="document.getElementById('id01').style.display='block'">New Message <i
                             class="w3-padding fa fa-pencil"></i></a>
-                    <a id="myBtn" href="javascript:void(0)" class="w3-bar-item w3-button"
-                        onclick="document.getElementById('id02').style.display='block'"><i
-                            class="fa fa-inbox w3-margin-right"></i>Inbox (3)</a>
-                    <a id="myBtn" href="javascript:void(0)" class="w3-bar-item w3-button"><i
-                            class="fa fa-paper-plane w3-margin-right"
-                            onclick="document.getElementById('id03').style.display='block'"></i>Sent</a>
-                    <a id="myBtn" href="javascript:void(0)" class="w3-bar-item w3-button"
-                        onclick="document.getElementById('id04').style.display='block'"><i
+                    <a id="myBtn" href="javascript:void(0)" class="w3-bar-item w3-button tablink"
+                        (click)="openCity(event, 'inbox')"><i class="fa fa-inbox w3-margin-right"></i>Inbox (3)</a>
+                    <a id="myBtn" href="javascript:void(0)" class="w3-bar-item w3-button tablink"
+                        (click)="openCity(event, 'sent')"><i class="fa fa-paper-plane w3-margin-right"></i>Sent</a>
+                    <a id="myBtn" href="javascript:void(0)" class="w3-bar-item w3-button tablink"
+                        (click)="openCity(event, 'drafts')"><i
                             class="fa fa-hourglass-end w3-margin-right"></i>Drafts</a>
-                    <a id="myBtn" href="javascript:void(0)" class="w3-bar-item w3-button"><i
-                            class="fa fa-trash w3-margin-right"
-                            onclick="document.getElementById('id05').style.display='block'"></i>Trash</a>
+                    <a id="myBtn" href="javascript:void(0)" class="w3-bar-item w3-button tablink"
+                        (click)="openCity(event, 'trash')"><i class="fa fa-trash w3-margin-right"></i>Trash</a>
                 </nav>
 
                 <!-- Page content -->
-                <div class="w3-main" id="id02" style="width: calc(100% - 100px);margin-left: 100px;">
+                <div class="w3-main" id="inbox" style="width: calc(100% - 100px);margin-left: 100px;display:none">
                     Inbox works!
                 </div>
-                <div class="w3-main" id="id03" style="width: calc(100% - 100px);margin-left: 100px;">
+                <div class="w3-main" id="sent" style="width: calc(100% - 100px);margin-left: 100px;display:none">
                     Sent Message works!
                 </div>
-                <div class="w3-main" id="id04" style="width: calc(100% - 100px);margin-left: 100px;">
+                <div class="w3-main" id="drafts" style="width: calc(100% - 100px);margin-left: 100px;display:none">
                     Draft Message works!
                 </div>
-                <div class="w3-main" id="id05" style="width: calc(100% - 100px);margin-left: 100px;">
+                <div class="w3-main" id="trash" style="width: calc(100% - 100px);margin-left: 100px;display:none">
                     Trash works!
                 </div>
 

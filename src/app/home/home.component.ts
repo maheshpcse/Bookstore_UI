@@ -27,10 +27,14 @@ export class HomeComponent implements OnInit {
       this.hideData = false;
       this.names = this.tempNames;
     } else {
+      console.log('else starts', this.book);
+      this.names = this.tempNames;
+      console.log(this.names);
       let value = this.book.toLowerCase();
       let arr = _.filter(this.names, (e: any) => {
         return e.toLowerCase().includes(value) || e.toLowerCase().match(/value/g) || e.toLowerCase().match('/value/b') ||e.toLowerCase().match('/value/\s/g') || e.toLowerCase() == value
       });
+      console.log(arr);
       this.hideData = true;
       this.names = arr;
     }
