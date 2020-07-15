@@ -17,7 +17,6 @@ import { BookOrderFormComponent } from './book-order-form/book-order-form.compon
 import { AuthGuardService } from './auth-guard.service';
 
 
-
 const routes: Routes = [
   {
     path: '',
@@ -34,18 +33,22 @@ const routes: Routes = [
   },
   {
     path: 'home',
+    canActivate: [AuthGuardService],
     component: HomeComponent
   },
   {
     path: 'dashboard',
+    canActivate: [AuthGuardService],
     component: DashboardComponent
   },
   {
     path: 'books',
+    canActivate: [AuthGuardService],
     component: BooksComponent
   },
   {
     path: 'book/view',
+    canActivate: [AuthGuardService],
     component: BookViewComponent
   },
   {

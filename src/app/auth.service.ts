@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Apiservice } from './app.service'
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -16,8 +14,9 @@ export class AuthService {
   }
   logindetails(obj) {
     return this.http.post(Apiservice.API.LOGIN, obj);
-
   }
+
+
   getUserToken() {
     return localStorage.getItem('token');
   }

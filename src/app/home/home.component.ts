@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   tempNames: any = [];
   hideData: boolean = false;
 
-  constructor() { 
+  constructor() {
     this.names = ['Adele', 'Agnes', 'Billy', 'Bob', 'Calvin', 'Christina', 'Cindy'];
     this.tempNames = this.names;
   }
@@ -23,13 +23,13 @@ export class HomeComponent implements OnInit {
   }
 
   myFunction() {
-    if(this.book == '' || this.book == undefined) {
+    if (this.book == '' || this.book == undefined) {
       this.hideData = false;
       this.names = this.tempNames;
     } else {
       let value = this.book.toLowerCase();
       let arr = _.filter(this.names, (e: any) => {
-        return e.toLowerCase().includes(value) ||  e.toLowerCase().match(/value/g) || e.toLowerCase() == value
+        return e.toLowerCase().includes(value) || e.toLowerCase().match(/value/g) || e.toLowerCase().match('/value/b') ||e.toLowerCase().match('/value/\s/g') || e.toLowerCase() == value
       });
       this.hideData = true;
       this.names = arr;
