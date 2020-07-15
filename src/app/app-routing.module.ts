@@ -53,30 +53,37 @@ const routes: Routes = [
   },
   {
     path: 'book/orders',
+    canActivate: [AuthGuardService],
     component: BookOrdersComponent
   },
   {
     path: 'book/order/form',
+    canActivate: [AuthGuardService],
     component: BookOrderFormComponent
   },
   {
     path: 'books/history',
+    canActivate: [AuthGuardService],
     component: BookHistoryComponent
   },
   {
     path: 'notifications',
+    canActivate: [AuthGuardService],
     component: NotificationsComponent
   },
   {
     path: 'admin/profile',
+    canActivate: [AuthGuardService],
     component: ViewProfileComponent
   },
   {
     path: 'admin/settings',
+    canActivate: [AuthGuardService],
     component: SettingsComponent
   },
   { 
     path: 'admin/inbox',
+    canActivate: [AuthGuardService],
     component: InboxComponent
   },
   {

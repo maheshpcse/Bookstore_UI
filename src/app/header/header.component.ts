@@ -54,4 +54,10 @@ export class HeaderComponent implements OnInit {
   // overlayBg.style.display = "none";
   }
 
+  logOut() {
+    localStorage.clear();
+    sessionStorage.clear();
+    this.router.navigate(['/login']);
+  }
+
 }

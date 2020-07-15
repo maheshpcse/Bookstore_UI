@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
   email: any;
   password: any;
   phonenumber: any;
-  desgination: any;
+  designation: any;
   department: any;
 
   constructor(
@@ -70,9 +70,9 @@ export class SignupComponent implements OnInit {
       email: this.email,
       password: this.password,
       phonenumber: this.phonenumber,
-      desgination: this.desgination,
-      depertmenet: this.department,
-      status: 'open'
+      designation: this.designation,
+      department: this.department,
+      status: 'Active'
     }
     this.authservice.signupdetails(obj).subscribe(response => {
       console.log('the response is tee', response);

@@ -8,6 +8,13 @@ import html2canvas from 'html2canvas';
 })
 export class ViewProfileComponent implements OnInit {
 
+  firstname: any = sessionStorage.getItem('firstname');
+  lastname: any = sessionStorage.getItem('lastname');
+  username: any = sessionStorage.getItem('username');
+  email: any = sessionStorage.getItem('email');
+  designation: any = sessionStorage.getItem('designation');
+  department: any = sessionStorage.getItem('department');
+
   constructor() { }
 
   ngOnInit() {

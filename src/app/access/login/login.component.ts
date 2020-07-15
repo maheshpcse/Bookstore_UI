@@ -32,21 +32,24 @@ export class LoginComponent implements OnInit {
       console.log('the response is tee', response);
       if (response['statusCode'] == 200) {
         localStorage.setItem('token', response['token']);
-        sessionStorage.setItem('id', response['id']);
-        sessionStorage.setItem('firstname', response['firstname']);
-        sessionStorage.setItem('lastname', response['lastname']);
-        sessionStorage.setItem('username', response['username']);
-        sessionStorage.setItem('password', response['password']);
-        sessionStorage.setItem('email', response['email']);
-        sessionStorage.setItem('desgination', response['desgination']);
-        sessionStorage.setItem('depertmenet', response['depertmenet']);
-        sessionStorage.setItem('updated_at', response['updated_at']);
-        this.toster.successToastr('login sucess');
+        sessionStorage.setItem('lastlogintime', response['lastlogintime']);
+        sessionStorage.setItem('id', response['data']['_id']);
+        sessionStorage.setItem('firstname', response['data']['firstname']);
+        sessionStorage.setItem('lastname', response['data']['lastname']);
+        sessionStorage.setItem('username', response['data']['username']);
+        sessionStorage.setItem('password', response['data']['password']);
+        sessionStorage.setItem('email', response['data']['email']);
+        sessionStorage.setItem('designation', response['data']['designation']);
+        sessionStorage.setItem('department', response['data']['department']);
+        sessionStorage.setItem('updated_at', response['data']['updated_at']);
+        this.toster.successToastr(response['message']);
         this.router.navigate(['/home']);
       }
-      else {
-        this.toster.errorToastr('login is failed');
-        this.router.navigate(['/login']);
+      else if (response['statusCode'] == 404) {
+        this.toster.warningToastr(response['message']);
+      }
+      else if (response['statusCode'] == 500) {
+        this.toster.errorToastr(response['message']);
       }
     })
   }

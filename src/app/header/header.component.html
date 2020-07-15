@@ -52,7 +52,7 @@
         <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-left account" style="width:150px;top:45px;right: -110px;">
             <a [routerLink]="['/admin/profile']" class="w3-bar-item w3-button" [ngClass]="{'active': href == '/admin/profile'}">Profile</a>
             <a [routerLink]="['/admin/settings']" class="w3-bar-item w3-button" [ngClass]="{'active': href == '/admin/settings'}">Settings</a>
-            <a [routerLink]="['/']" class="w3-bar-item w3-button">Logout</a>
+            <a class="w3-bar-item w3-button" (click)="logOut()">Logout</a>
         </div>
     </a>
 </div>
