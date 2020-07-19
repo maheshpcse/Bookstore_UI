@@ -27,6 +27,7 @@ import { BookOrderFormComponent } from './book-order-form/book-order-form.compon
 import { AuthGuardService } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { AuthInterceptorService } from './auth-interceptor.service';
+import { ReactiveFoamsComponent } from './reactive-foams/reactive-foams.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { AuthInterceptorService } from './auth-interceptor.service';
     InboxComponent,
     BookViewComponent,
     OrderBookComponent,
-    BookOrderFormComponent
+    BookOrderFormComponent,
+    ReactiveFoamsComponent
   ],
   imports: [
     BrowserModule,

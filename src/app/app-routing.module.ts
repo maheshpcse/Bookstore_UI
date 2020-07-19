@@ -1,3 +1,4 @@
+import { ReactiveFoamsComponent } from './reactive-foams/reactive-foams.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -17,10 +18,11 @@ import { BookOrderFormComponent } from './book-order-form/book-order-form.compon
 import { AuthGuardService } from './auth-guard.service';
 
 
+
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'reactive',
     pathMatch: 'full'
   },
   {
@@ -90,6 +92,10 @@ const routes: Routes = [
     path: 'profile',
     canActivate: [AuthGuardService],
     component: LoginComponent
+  },
+  {
+    path: 'reactive',
+    component: ReactiveFoamsComponent
   },
   {
     path: '**',
