@@ -1,0 +1,86 @@
+<app-header></app-header>
+<app-sidemenu></app-sidemenu>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 chat-body">
+                <div class="w3-container" style="width:100vw;padding: 0;height: 100vh;">
+                    <div class="w3-card-4" style="border-top: 1px solid #dee2e6;">
+                        <header class="w3-container w3-light-grey user-list">
+                            <img src="assets/w3images/avatar2.png" class="w3-circle" width="50" height="50" alt="_user">
+                            <div class="mt-3 ml-3">
+                                <h3>John Doe</h3>
+                                <p>Online</p>
+                            </div>
+                        </header>
+                        <hr>
+                        <div class="w3-container" style="height: 50vh;overflow: scroll;">
+                            <ul class="list-group list-group-flush list-action"
+                                *ngFor="let item of msgsList;let i=index">
+                                <img src="../../assets/images/admin-avatar.png" alt="_vaas" class="img-responsive"
+                                    width="50" height="50" *ngIf="i%2==0">
+                                <img src="../../assets/images/user-avatar.png" alt="_vaas" class="img-responsive"
+                                    width="50" height="50" *ngIf="i%2==1">
+                                <li class="list-group-item list-action-item">{{ item.msg }}</li>
+                            </ul>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" class="w3-input" placeholder="Enter message...">
+                            <button class="btn btn-action">
+                                <i class="fa fa-send fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="w3-container" style="width: 50vw;height: 100vh;">
+                    <div class="w3-card-4">
+                        <header class="w3-container w3-light-grey p-0 chat-search">
+                            <input class="w3-input" type="text">
+                            <button class="btn btn-action">
+                                <i class="fa fa-search fa-fw"></i>
+                            </button>
+                        </header>
+
+                        <div class="w3-container w3-round w3-light-grey mt-3">
+                            <p class="w3-center"><img src="assets/w3images/avatar3.png" class="w3-circle"
+                                    style="height:106px;width:106px" alt="Avatar"></p>
+                            <h4 class="w3-center">Mahesh Pachapalam</h4>
+                            <hr>
+                            <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Mean Stack Developer</p>
+                            <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Visakapatnam, AP</p>
+                            <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> August 04, 1997
+                            </p>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="w3-container" style="width: 50vw;height: 100vh;">
+                    <div class="w3-card-4">
+                        <header class="w3-container w3-light-grey p-0 chat-search">
+                            <input type="text" class="w3-input" placeholder="Quick search...">
+                            <button class="btn btn-action">
+                                <i class="fa fa-search fa-fw"></i>
+                            </button>
+                        </header>
+                        <ul class="list-group user-action" *ngFor="let item of usersList;let i=index">
+                            <li class="list-group-item user-list">
+                                <img src="assets/w3images/avatar{{i+1}}.png" class="w3-circle" width="50" height="50"
+                                    alt="_user">
+                                <div class="mt-3 ml-3">
+                                    <h4>{{ item.name }}</h4>
+                                    <p>{{ item.msg }}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+
+</div>
+<!-- End page content -->

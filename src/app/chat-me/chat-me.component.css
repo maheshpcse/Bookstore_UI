@@ -1,0 +1,88 @@
+.col-md-12 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 50%;
+  border-radius: 0%;
+}
+
+.card-header {
+  border: 1px solid #dee2e6;
+}
+
+.card-title {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.card-body {
+  height: 50vh;
+  overflow: scroll;
+}
+
+.list-group:nth-child(even) {
+  justify-content: left;
+  flex-direction: row-reverse;
+  margin-block-end: 15px;
+  color: #1668af;
+}
+
+.list-group-flush:nth-child(even) {
+  display: flex;
+  justify-content: left;
+}
+
+.list-group:nth-child(odd) {
+  justify-content: left;
+  flex-direction: row;
+  margin-block-end: 15px;
+  color: lightseagreen;
+}
+
+.list-group-flush:nth-child(odd) {
+  display: flex;
+  justify-content: left;
+}
+
+.card-footer {
+  border: 1px solid #dee2e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type=text] {
+  border: none;
+  border-radius: 0%;
+  padding: 1.5rem;
+  font-family: 'MavenPro';
+  font-weight: 400;
+}
+
+.btn-action {
+  text-align: center;
+  border-radius: 0%;
+  color: whitesmoke;
+  background-color: rgba(29, 161, 242, 1.00);
+  padding-right: 20px;
+}
+
+.btn-clear {
+  background-color: #f1f1f1;
+}
+
+.btn-clear:hover {
+  background-color: white;
+}
+
+.btn-action,
+.fa-send {
+  text-align: center;
+  font-size: 1.5rem;
+}

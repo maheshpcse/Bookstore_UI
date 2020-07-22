@@ -1,0 +1,79 @@
+.chat-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-action:nth-child(even) {
+  justify-content: left;
+  flex-direction: row-reverse;
+  margin-block-end: 15px;
+  color: #1668af;
+}
+
+.list-action-item:nth-child(even) {
+  display: flex;
+  justify-content: left;
+}
+
+.list-action:nth-child(odd) {
+  justify-content: left;
+  flex-direction: row;
+  margin-block-end: 15px;
+  color: lightseagreen;
+}
+
+.list-action-item:nth-child(odd) {
+  display: flex;
+  justify-content: left;
+}
+
+.chat-input,
+.chat-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type=text] {
+  border: 1px solid #dee2e6;
+  border-radius: 0%;
+  padding: 1.5rem;
+  font-family: 'MavenPro';
+  font-weight: 400;
+}
+
+.btn-action {
+  text-align: center;
+  border-radius: 0%;
+  color: white;
+  background-color: #1668af;
+}
+
+.btn-clear {
+  background-color: #f1f1f1;
+}
+
+.btn-clear:hover {
+  background-color: white;
+}
+
+.btn-action,
+.fa-send,
+.fa-search {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.user-action {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.user-list {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+  cursor: pointer;
+}

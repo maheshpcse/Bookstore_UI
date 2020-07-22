@@ -1,3 +1,13 @@
+.bg-image {
+  background-image: url("../../../assets/images/background-images-for-websites-professional-white-8.jpg");
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .w3-brown {
-    background-color: #1668af !important
+  background-color: #1668af !important
 }

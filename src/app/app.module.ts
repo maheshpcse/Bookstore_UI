@@ -27,7 +27,14 @@ import { BookOrderFormComponent } from './book-order-form/book-order-form.compon
 import { AuthGuardService } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { AuthInterceptorService } from './auth-interceptor.service';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { environment } from './../environments/environment';
+import { ChatMeComponent } from './chat-me/chat-me.component';
+import { SocketIoService } from './socket-io.service';
+import { ChatRoomComponent } from './chat-room/chat-room.component';
+import { ChatBossComponent } from './chat-boss/chat-boss.component';
 
+const config: SocketIoConfig = { url: environment.socketUrl, options: {} };
 
 @NgModule({
   declarations: [
@@ -49,7 +56,10 @@ import { AuthInterceptorService } from './auth-interceptor.service';
     InboxComponent,
     BookViewComponent,
     OrderBookComponent,
-    BookOrderFormComponent
+    BookOrderFormComponent,
+    ChatMeComponent,
+    ChatRoomComponent,
+    ChatBossComponent
   ],
   imports: [
     BrowserModule,
@@ -58,12 +68,14 @@ import { AuthInterceptorService } from './auth-interceptor.service';
     ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [
     AuthService,
     AuthInterceptorService,
-    AuthGuardService
+    AuthGuardService,
+    SocketIoService
   ],
   bootstrap: [AppComponent]
 })

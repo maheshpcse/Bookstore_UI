@@ -15,6 +15,8 @@ import { InboxComponent } from './admin/inbox/inbox.component';
 import { BookViewComponent } from './book-view/book-view.component';
 import { BookOrderFormComponent } from './book-order-form/book-order-form.component';
 import { AuthGuardService } from './auth-guard.service';
+import { ChatMeComponent } from './chat-me/chat-me.component';
+import { ChatRoomComponent } from './chat-room/chat-room.component';
 
 
 const routes: Routes = [
@@ -85,6 +87,16 @@ const routes: Routes = [
     path: 'admin/inbox',
     canActivate: [AuthGuardService],
     component: InboxComponent
+  },
+  {
+    path: 'chatroom',
+    canActivate: [AuthGuardService],
+    component: ChatRoomComponent
+  },
+  {
+    path: 'chatme',
+    canActivate: [AuthGuardService],
+    component: ChatMeComponent
   },
   {
     path: '**',
