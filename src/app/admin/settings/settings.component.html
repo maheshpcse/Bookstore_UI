@@ -1,18 +1,84 @@
 <app-header></app-header>
 <app-sidemenu></app-sidemenu>
-
 <!-- !PAGE CONTENT! -->
 <div class="w3-main">
-
+  <div class="col-md-12">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                settings works!
-            </div>
+      <div class="row">
+        <div class="col-md-12">
+          <span class="books">
+            <h2>Add Books</h2>
+          </span>
         </div>
-    </div>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="registerForm">
+          <section class="container border mb-4 p-3" formArrayName="addresses"
+            *ngFor="let address of addressControls; let i = index;">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="book">Bookname</label>
+                  <input id="my-input" class="form-control" type="text" name>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="book">book_author</label>
+                  <input id="my-input" class="form-control" type="text" name>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="book">book_shop</label>
+                  <input id="my-input" class="form-control" type="text" name>
+                </div>
+              </div>
+              <div class="col-md-1 float-left mt-4">
+                <button type="button" class="btn btn-danger btn-sm" (click)="addAddress(i)">
+                  Add
+                </button>
+              </div>
+              <div class="col-md-1 float-left mt-4">
+                <button type="button" class="btn btn-danger btn-sm" *ngIf="i>0" (click)="remove(i)">
+                  remove
+                </button>
+              </div>
+            </div>
+          </section>
+        </form>
 
-    <app-footer></app-footer>
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">settings works!</div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
 <!-- End page content -->

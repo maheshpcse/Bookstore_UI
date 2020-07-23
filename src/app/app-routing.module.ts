@@ -1,4 +1,3 @@
-import { ReactiveFoamsComponent } from './reactive-foams/reactive-foams.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -16,13 +15,16 @@ import { InboxComponent } from './admin/inbox/inbox.component';
 import { BookViewComponent } from './book-view/book-view.component';
 import { BookOrderFormComponent } from './book-order-form/book-order-form.component';
 import { AuthGuardService } from './auth-guard.service';
+import { ChatMeComponent } from './chat-me/chat-me.component';
+import { ChatRoomComponent } from './chat-room/chat-room.component';
+import { ReactiveFoamsComponent } from './reactive-foams/reactive-foams.component';
 
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'reactive',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -89,13 +91,19 @@ const routes: Routes = [
     component: InboxComponent
   },
   {
-    path: 'profile',
+    path: 'chatroom',
     canActivate: [AuthGuardService],
-    component: LoginComponent
+    component: ChatRoomComponent
   },
   {
-    path: 'reactive',
-    component: ReactiveFoamsComponent
+    path: 'chatme',
+    canActivate: [AuthGuardService],
+    component: ChatMeComponent
+  },
+  {
+    path:'reactive',
+    //canActivate: [AuthGuardService],
+    component:ReactiveFoamsComponent
   },
   {
     path: '**',
