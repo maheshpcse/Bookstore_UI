@@ -6,10 +6,13 @@ import { Apiservice } from './app.service'
   providedIn: 'root'
 })
 export class AuthService {
+
   constructor(private http: HttpClient) { }
+
   signupdetails(obj) {
     return this.http.post(Apiservice.API.SIGNUP, obj);
   }
+  
   logindetails(obj) {
     return this.http.post(Apiservice.API.LOGIN, obj);
   }
@@ -30,5 +33,9 @@ export class AuthService {
       return userPayload.exp > Date.now() / 1000;
     else
       return false;
+  }
+
+  isLogout(data: any) {
+    return this.http.post(Apiservice.API.LOGOUT, data);
   }
 }

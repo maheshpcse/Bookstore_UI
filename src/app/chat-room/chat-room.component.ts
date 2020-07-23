@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SocketIoService } from '../socket-io.service';
 
 @Component({
   selector: 'app-chat-room',
@@ -11,10 +12,13 @@ export class ChatRoomComponent implements OnInit {
   msgsList: any = [];
   user: any;
   usersList: any = [];
+  usersData: any = [];
 
-  constructor() { }
+  constructor(private socketService: SocketIoService) { 
+    // this.socketService.getUsers();
+  }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.msgsList = [
       {msg:`Hello, I'm Vaas!`},
       {msg:`Hey, My name is Mahesh.`},
@@ -28,7 +32,19 @@ export class ChatRoomComponent implements OnInit {
       {name: 'Vasista', msg: 'How are you all?'},
       {name: 'Mohan', msg: 'Today is my good day...ha ha'},
       {name: 'Venkat', msg: 'Jeena hy tho marna sikho...'}
-    ]
+    ];
+
+    await this.socketService.getUsersData().subscribe((resp) => {
+      this.usersData = resp;
+      console.log(this.usersData, "users Data");
+      for(let i of this.usersData) {
+        let obj = {
+          name: i.firstname + ' ' + i.lastname,
+          msg: ''
+        }
+        this.usersList.push(obj);
+      }
+    });
   }
 
 }

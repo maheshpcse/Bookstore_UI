@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -12,13 +13,14 @@ export class AppComponent {
   href: any;
 
   constructor(
-    private router: Router
-  ) { }
-
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.href = this.router.url;
+    private router: Router,
+    private location: Location
+  ) { 
+    this.href = (window.location.href).split('http://localhost:4200/')[1];
     console.log(this.href);
+  }
+
+  ngOnInit() {
+    
   }
 }

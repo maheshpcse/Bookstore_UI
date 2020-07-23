@@ -20,11 +20,11 @@ import { ChatRoomComponent } from './chat-room/chat-room.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: 'login',
+  //   redirectTo: 'login',
+  //   pathMatch: 'full'
+  // },
   {
     path: 'login',
     component: LoginComponent
@@ -97,6 +97,11 @@ const routes: Routes = [
     path: 'chatme',
     canActivate: [AuthGuardService],
     component: ChatMeComponent
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
   },
   {
     path: '**',

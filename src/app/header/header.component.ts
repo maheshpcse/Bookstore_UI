@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 declare var $:any
 
 
@@ -13,7 +14,8 @@ export class HeaderComponent implements OnInit {
   href: any;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -55,9 +57,12 @@ export class HeaderComponent implements OnInit {
   }
 
   logOut() {
-    localStorage.clear();
-    sessionStorage.clear();
-    this.router.navigate(['/login']);
+    this.authService.isLogout({ username: sessionStorage.getItem('username') }).subscribe(res => {
+      console.log('User logout successful');
+      localStorage.clear();
+      sessionStorage.clear();
+      this.router.navigate(['/login']);
+    })
   }
 
 }

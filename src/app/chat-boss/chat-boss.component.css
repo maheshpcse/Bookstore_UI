@@ -1,11 +1,11 @@
-.chat {
+.chatbox {
     position: fixed;
     right: 2%;
     top: 90%;
     z-index: 9999;
 }
 
-.chat-icon {
+.chat {
     color: white;
     background-color: #1668af;
     border-radius: 100px;
@@ -16,6 +16,6 @@
     cursor: pointer;
 }
 
-.chat-icon .i {
+.chat i {
     font-size: 1.5rem;
 }
